@@ -1,0 +1,20 @@
+def group_anagrams(strs):
+    anagrams = {}
+    
+    for s in strs:
+        sorted_str = ''.join(sorted(s))
+        
+        # key-Dictionary
+        if sorted_str in anagrams:
+            anagrams[sorted_str].append(s)
+        else:
+            anagrams[sorted_str] = [s]
+    
+    # anagram
+    return list(anagrams.values())
+
+# input
+input_strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
+# output
+output = group_anagrams(input_strs)
+print(output)
